@@ -46,6 +46,8 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
+    border: none;
+    background-color: $main-color;
   }
 }
 @media (max-width: 767px) {
