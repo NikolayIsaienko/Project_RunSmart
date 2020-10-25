@@ -45,6 +45,7 @@
       width: 131px;
       height: 40px;
       font-size: 14px;
+      margin-top: 0;
     }
   }
 }
@@ -63,6 +64,14 @@
       width: 131px;
       height: 40px;
       font-size: 14px;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .button {
+    &_mini {
+      width: 111px;
+      height: 40px;
     }
   }
 }
