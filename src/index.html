@@ -25,7 +25,9 @@
             <a href="tel:+380670000000" class="header__phone"
               >+38 (067) 000-00-00</a
             >
-            <button class="button">заказать звонок</button>
+            <button data-modal="consultation" class="button">
+              заказать звонок
+            </button>
           </div>
         </header>
         <div class="promo__wrapper">
@@ -45,10 +47,12 @@
               Ответим на все вопросы
             </div>
           </div>
-          <button class="button button_main">заказать консультацию</button>
+          <button data-modal="consultation" class="button button_main">
+            заказать консультацию
+          </button>
           <div class="promo__link">
             или
-            <a href="#">ПЕРЕЙТИ В КАТАЛОГ</a>
+            <a href="#catalog">ПЕРЕЙТИ В КАТАЛОГ</a>
           </div>
         </div>
       </div>
@@ -108,14 +112,9 @@
           Просто заполните форму заявки<br />
           и мы перезвоним вам в течении 10 минут
         </div>
-        <form class="feed-form" action="#">
+        <form id="consultation-form" class="feed-form" action="#">
           <input name="name" required placeholder="Ваше имя" type="text" />
-          <input
-            name="phone"
-            required
-            placeholder="Ваш телефон"
-            type="number"
-          />
+          <input name="phone" required placeholder="Ваш телефон" />
           <input name="email" required placeholder="Ваш Email" type="email" />
           <button class="button button_submit">заказать консультацию</button>
         </form>
@@ -124,13 +123,13 @@
     <section class="carousel">
       <div class="container">
         <div class="carousel__inner">
-          <div><img src="img/slide_1.jpg" alt="slide" /></div>
-          <div><img src="img/slide_2.jpg" alt="slide" /></div>
-          <div><img src="img/slide_3.jpg" alt="slide" /></div>
+          <div><img src="img/Polar-Grit-X-4.png" alt="slide" /></div>
+          <div><img src="img/polar-vantage-v__4_.png" alt="slide" /></div>
+          <div><img src="img/vantage-m_frontleft_blue.png" alt="slide" /></div>
         </div>
       </div>
     </section>
-    <section class="catalog">
+    <section class="catalog" id="catalog">
       <div class="container">
         <h2 class="title">Каталог пульсометров</h2>
         <ul class="catalog__tabs">
@@ -186,12 +185,12 @@
             <div class="catalog-item__wrapper">
               <div class="catalog-item__content catalog-item__content_active">
                 <img
-                  src="img/Polar-Grit-X-4.png"
+                  src="img/polar-vantage-v__4_.png"
                   alt="pulsometr"
                   class="catalog-item__img"
                 />
                 <div class="catalog-item__subtitle">
-                  Пульсометр Polar Grit X Black
+                  Пульсометр Polar Vantage V Black
                 </div>
                 <div class="catalog-item__descr">
                   Для первых шагов в тренировках, основанных на сердечном ритме
@@ -217,8 +216,8 @@
             <hr />
             <div class="catalog-item__footer">
               <div class="catalog-item__prices">
-                <div class="catalog-item__old-price">13500 грн.</div>
-                <div class="catalog-item__price">12000 грн.</div>
+                <div class="catalog-item__old-price">15700 грн.</div>
+                <div class="catalog-item__price">14200 грн.</div>
               </div>
               <button class="button button_mini">КУПИТЬ</button>
             </div>
@@ -227,12 +226,12 @@
             <div class="catalog-item__wrapper">
               <div class="catalog-item__content catalog-item__content_active">
                 <img
-                  src="img/Polar-Grit-X-4.png"
+                  src="img/vantage-m_frontleft_blue.png"
                   alt="pulsometr"
                   class="catalog-item__img"
                 />
                 <div class="catalog-item__subtitle">
-                  Пульсометр Polar Grit X Black
+                  Пульсометр Polar Vantage M Blue
                 </div>
                 <div class="catalog-item__descr">
                   Для первых шагов в тренировках, основанных на сердечном ритме
@@ -258,8 +257,8 @@
             <hr />
             <div class="catalog-item__footer">
               <div class="catalog-item__prices">
-                <div class="catalog-item__old-price">13500 грн.</div>
-                <div class="catalog-item__price">12000 грн.</div>
+                <div class="catalog-item__old-price">8700 грн.</div>
+                <div class="catalog-item__price">8000 грн.</div>
               </div>
               <button class="button button_mini">КУПИТЬ</button>
             </div>
@@ -736,6 +735,48 @@
         tabindex="0"
       ></iframe>
     </footer>
+    <div class="overlay">
+      <div class="container">
+        <div class="modal" id="consultation">
+          <div class="modal__close">&times;</div>
+          <div class="modal__subtitle">Просто заполните форму заявки</div>
+          <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
+          <form class="feed-form" action="#">
+            <input name="name" placeholder="Ваше имя" type="text" />
+            <input name="phone" placeholder="Ваш телефон" />
+            <input name="email" placeholder="Ваш E-mail" type="email" />
+
+            <button class="button button_submit">заказать консультацию</button>
+          </form>
+        </div>
+
+        <div class="modal" id="order">
+          <div class="modal__close">&times;</div>
+          <div class="modal__subtitle">Ваш заказ:</div>
+          <div class="modal__descr">Пульсометр Polar Grit X Black</div>
+          <form class="feed-form" action="#">
+            <input name="name" required placeholder="Ваше имя" type="text" />
+            <input name="phone" required placeholder="Ваш телефон" />
+            <input
+              name="email"
+              required
+              placeholder="Ваш E-mail"
+              type="email"
+            />
+
+            <button class="button button_submit">купить</button>
+          </form>
+        </div>
+
+        <div class="modal modal_mini" id="thanks">
+          <div class="modal__close">&times;</div>
+          <div class="modal__subtitle">Спасибо за вашу заявку!</div>
+          <div class="modal__descr">
+            Наш менеджер свяжется с вами в ближайшее время!
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-1.11.0.min.js"
@@ -744,6 +785,8 @@
       type="text/javascript"
       src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
     ></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/script.js"></script>
   </body>
